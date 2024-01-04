@@ -141,14 +141,13 @@ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 # TWRP specific build flags
 RECOVERY_SDCARD_ON_DATA := true
 TW_NO_SCREEN_BLANK := true
-TW_SCREEN_BLANK_ON_BOOT := true
+#TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_NTFS_3G := true
 TW_USE_TOOLBOX := true
 TW_EXTRA_LANGUAGES := false
 #TW_DEFAULT_LANGUAGE := ru
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TARGET_USES_MKE2FS := true
-TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_APEX := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
@@ -175,3 +174,7 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
 
+TW_LOAD_VENDOR_MODULES := "novatek_ts_truly_fw.bin \
+                           novatek_ts_truly_mp.bin \
+                           focaltech_ts_fw_boe.bin \
+                           ICNL9916.bin"
